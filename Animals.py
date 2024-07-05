@@ -1,20 +1,24 @@
 #Mixin: Классы миксины Run, Jump, Fly
 class Run:
+    "Класс миксин: бег - вариант передвиженрия по земле"
     def run(self):
         print(f"{self.name} is moving")
 
 class Jump:
+    "Класс миксин: прыжок - вариан передвиженрия в воздухе для сухопутных"
     def jump(self):
         print(f"{self.name} is jump")
 
 class Fly:
+    "Класс миксин: прыжок - вариан передвиженрия в воздухе для летающих животных"
     def fly(self):
         print(f"{self.name} is fly")
 
 class Animals:
+    'Базовый класс от него наследуется все классы животных'
     description: str = "It's a life"
 
-    def __init__(self, name, age, legs=4, color='Black', sex='men'):
+    def __init__(self, name, age, legs=4, color='Black', sex='men') -> None:
         self.name: str = name
         self.age: int = age
         self.legs: int = legs
