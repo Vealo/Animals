@@ -1,3 +1,7 @@
+class Run:
+    def run(self):
+        print(f"{self.name} is moving")
+
 class Animals:
     description: str = "It's a life"
 
@@ -13,9 +17,6 @@ class Animals:
             return self.run()
         else:
             print(f'{self.name} is moving')
-
-    def run(self):
-        print(f"{self.name} is moving")
 
 
 class Birds(Animals):
