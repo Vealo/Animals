@@ -1,6 +1,11 @@
+#Mixin: Классы миксины Run, Jump
 class Run:
     def run(self):
         print(f"{self.name} is moving")
+
+class Jump:
+    def jump(self):
+        print(f"{self.name} is jump")
 
 class Animals:
     description: str = "It's a life"
@@ -31,8 +36,7 @@ class Birds(Animals):
     def flying(self):
         print(f"{self.name} is fly")
 
-    def run(self):
-        print(f"{self.name} is jump")
+
 
 
 class Mammals(Animals):
