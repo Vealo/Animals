@@ -31,6 +31,12 @@ class Animals:
     def move(self, environment='earth'):
         print(f'{self.name} is moving')
 
+    def __str__(self):
+        return f'Животное по имени {self.name}'
+
+    def __repr__(self):
+        return f'Animal({self.name, self.age})'
+
 
 class Birds(Animals, Fly):
     description: str = "Птицы"
@@ -44,6 +50,12 @@ class Birds(Animals, Fly):
     def flying(self):
         print(f"{self.name} is fly")
 
+    def __str__(self):
+        return f'Птица по имени {self.name}'
+
+    def __repr__(self):
+        return f'Birds({self.name, self.age})'
+
 
 class Mammals(Animals, Run, Jump):
     description: str = "Млекопитающие"
@@ -54,12 +66,24 @@ class Mammals(Animals, Run, Jump):
         elif environment == 'earth':
             return self.run()
 
+    def __str__(self):
+        return f'Млекопетающие по имени {self.name}'
+
+    def __repr__(self):
+        return f'Mammals({self.name, self.age})'
 
 class Griffin(Birds, Mammals):
     description: str = "Это мифическое животное наполовину орел наполовину лев"
+
+    def __str__(self):
+        return f'Грифон {self.name}'
+
+    def __repr__(self):
+        return f'Griffin({self.name, self.age})'
 
 
 lst = [Animals('Cat', 11), Birds('Eagle', 1), Mammals('Gazel', 2), Griffin('Вася', 53)]
 
 for animal in lst:
-    animal.move()
+    print(animal)
+    print(repr(animal), end='\n\n')
