@@ -57,3 +57,29 @@ for animal in lst:
     print(f'{animal.__class__} зовут: {animal.name} возраста: {animal.age}')
     print(animal.__class__.mro())
     print('-' * 10, end='\n\n')
+
+
+
+class MethodStr:
+    def __init__(self, description):
+        self.description = Animals.description
+        #self.age = age
+
+    def __str__(self):
+        return self.description
+
+
+method_str = MethodStr("Animals/")
+print(method_str)
+
+
+class MethodRepr:
+    def __init__(self, description):
+        self.description = description
+
+    def __repr__(self):
+        return f"MethodRepr(description='{self.description}')"
+
+
+method_repr = MethodRepr("Mammals/")
+print(method_repr)
